@@ -1,0 +1,6 @@
+2025-05-28 12:40:40,235 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 12:40:40,251 - discord.client - INFO - logging in using static token
+2025-05-28 12:40:40,740 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 12:40:41,021 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8d2856b69f273a0947d14e222cf718b3).
+2025-05-28 12:40:43,026 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 12:40:43,026 - NutritionBot - INFO - Bot is in 1 guilds

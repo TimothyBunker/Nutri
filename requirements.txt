@@ -1,0 +1,23 @@
+# Health and Fitness Discord Bot Requirements
+
+# Discord bot framework
+discord.py>=2.3.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Data visualization
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Database (included in Python stdlib)
+# sqlite3
+
+# Optional: For better async support
+aiofiles>=23.0.0
+
+# Optional: For advanced scheduling
+APScheduler>=3.10.0
+
+# Optional: For timezone support
+pytz>=2023.3
