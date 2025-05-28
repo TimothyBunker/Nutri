@@ -79,3 +79,146 @@
 2025-05-28 12:40:47,269 - BotManager - INFO - [Workout Bot] 2025-05-28 12:40:43,002 - WorkoutBot - INFO - Bot is in 1 guilds
 2025-05-28 12:42:20,046 - BotManager - INFO - Received signal 2
 2025-05-28 12:42:20,184 - BotManager - INFO - Received signal 2
+2025-05-28 13:19:06,427 - BotManager - INFO - Starting all bots...
+2025-05-28 13:19:06,428 - BotManager - INFO - Starting Nutrition Bot...
+2025-05-28 13:19:06,433 - BotManager - INFO - Nutrition Bot started with PID 85854
+2025-05-28 13:19:06,434 - BotManager - INFO - Starting Workout Bot...
+2025-05-28 13:19:06,437 - BotManager - INFO - Workout Bot started with PID 85855
+2025-05-28 13:19:06,438 - BotManager - INFO - All bots started successfully
+2025-05-28 13:19:07,774 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:19:07,772 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:19:07,775 - BotManager - INFO - [Workout Bot] 2025-05-28 13:19:07,772 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:19:08,777 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:19:07] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:19:08,777 - BotManager - INFO - [Workout Bot] [2025-05-28 13:19:07] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:19:09,779 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:19:07,797 - discord.client - INFO - logging in using static token
+2025-05-28 13:19:09,779 - BotManager - INFO - [Workout Bot] 2025-05-28 13:19:07,801 - discord.client - INFO - logging in using static token
+2025-05-28 13:19:10,781 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:19:08,370 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:19:10,782 - BotManager - INFO - [Workout Bot] 2025-05-28 13:19:08,369 - WorkoutBot - INFO - Cogs loaded successfully
+2025-05-28 13:19:11,783 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:19:08] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 0c7b8d600b377a3403f3b2c25010687c).
+2025-05-28 13:19:11,784 - BotManager - INFO - [Workout Bot] [2025-05-28 13:19:08] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: bdb3ab563b5da7725460b4cdd94e2b80).
+2025-05-28 13:19:12,785 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:19:08,591 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0c7b8d600b377a3403f3b2c25010687c).
+2025-05-28 13:19:12,785 - BotManager - INFO - [Workout Bot] 2025-05-28 13:19:08,590 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: bdb3ab563b5da7725460b4cdd94e2b80).
+2025-05-28 13:19:13,787 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:19:10,596 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:19:13,787 - BotManager - INFO - [Workout Bot] 2025-05-28 13:19:10,596 - WorkoutBot - INFO - Worko#8608 has connected to Discord!
+2025-05-28 13:19:14,789 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:19:10,596 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:19:14,790 - BotManager - INFO - [Workout Bot] 2025-05-28 13:19:10,597 - WorkoutBot - INFO - Bot is in 1 guilds
+2025-05-28 13:24:27,005 - BotManager - INFO - Received signal 2
+2025-05-28 13:24:28,249 - BotManager - WARNING - Nutrition Bot is not running
+2025-05-28 13:24:28,249 - BotManager - INFO - Attempting to restart Nutrition Bot
+2025-05-28 13:24:30,254 - BotManager - INFO - Starting Nutrition Bot...
+2025-05-28 13:24:30,259 - BotManager - INFO - Nutrition Bot started with PID 85950
+2025-05-28 13:24:30,259 - BotManager - INFO - Nutrition Bot restarted successfully
+2025-05-28 13:24:31,380 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:24:31,380 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:24:31,380 - BotManager - WARNING - Workout Bot is not running
+2025-05-28 13:24:31,380 - BotManager - INFO - Attempting to restart Workout Bot
+2025-05-28 13:24:31,843 - BotManager - INFO - Received signal 2
+2025-05-28 13:24:37,501 - BotManager - INFO - Received signal 2
+2025-05-28 13:24:37,690 - BotManager - INFO - Received signal 2
+2025-05-28 13:24:37,711 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<BotManager.monitor_bots() done, defined at /Users/timothybunker/PycharmProjects/HealthAndFitness/run_bots.py:141> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/Users/timothybunker/opt/anaconda3/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Users/timothybunker/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "/Users/timothybunker/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
+    self._run_once()
+  File "/Users/timothybunker/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 1905, in _run_once
+    handle._run()
+  File "/Users/timothybunker/opt/anaconda3/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/Users/timothybunker/PycharmProjects/HealthAndFitness/run_bots.py", line 153, in monitor_bots
+    if bot.restart():
+  File "/Users/timothybunker/PycharmProjects/HealthAndFitness/run_bots.py", line 86, in restart
+    time.sleep(2)  # Brief pause before restart
+  File "/Users/timothybunker/PycharmProjects/HealthAndFitness/run_bots.py", line 419, in signal_handler
+    raise KeyboardInterrupt
+KeyboardInterrupt
+2025-05-28 13:28:50,232 - BotManager - INFO - Starting all bots...
+2025-05-28 13:28:50,233 - BotManager - INFO - Starting Nutrition Bot...
+2025-05-28 13:28:50,239 - BotManager - INFO - Nutrition Bot started with PID 86026
+2025-05-28 13:28:50,239 - BotManager - INFO - Starting Workout Bot...
+2025-05-28 13:28:50,245 - BotManager - INFO - Workout Bot started with PID 86027
+2025-05-28 13:28:50,245 - BotManager - INFO - All bots started successfully
+2025-05-28 13:28:50,245 - BotManager - INFO - Running in background mode
+2025-05-28 13:28:51,628 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:28:51,628 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:28:51,629 - BotManager - INFO - [Workout Bot] 2025-05-28 13:28:51,628 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:28:52,631 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:28:51] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:28:52,631 - BotManager - INFO - [Workout Bot] [2025-05-28 13:28:51] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:28:53,632 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:28:51,650 - discord.client - INFO - logging in using static token
+2025-05-28 13:28:53,633 - BotManager - INFO - [Workout Bot] 2025-05-28 13:28:51,653 - discord.client - INFO - logging in using static token
+2025-05-28 13:28:54,635 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:28:52,380 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:28:54,635 - BotManager - INFO - [Workout Bot] 2025-05-28 13:28:52,379 - WorkoutBot - INFO - Cogs loaded successfully
+2025-05-28 13:28:55,637 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:28:53] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 2473cff126819f84ab3d66fbe0454f80).
+2025-05-28 13:28:55,638 - BotManager - INFO - [Workout Bot] [2025-05-28 13:28:52] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: cf8b890c5f683eb8cd8f7dfb8c516d0e).
+2025-05-28 13:28:56,639 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:28:53,085 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2473cff126819f84ab3d66fbe0454f80).
+2025-05-28 13:28:56,640 - BotManager - INFO - [Workout Bot] 2025-05-28 13:28:52,668 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: cf8b890c5f683eb8cd8f7dfb8c516d0e).
+2025-05-28 13:28:57,641 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:28:55,090 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:28:57,642 - BotManager - INFO - [Workout Bot] 2025-05-28 13:28:54,671 - WorkoutBot - INFO - Worko#8608 has connected to Discord!
+2025-05-28 13:28:58,643 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:28:55,091 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:28:58,644 - BotManager - INFO - [Workout Bot] 2025-05-28 13:28:54,672 - WorkoutBot - INFO - Bot is in 1 guilds
+2025-05-28 13:39:20,516 - BotManager - INFO - Received signal 2
+2025-05-28 13:39:21,650 - BotManager - WARNING - Nutrition Bot is not running
+2025-05-28 13:39:21,651 - BotManager - INFO - Attempting to restart Nutrition Bot
+2025-05-28 13:39:23,652 - BotManager - INFO - Starting Nutrition Bot...
+2025-05-28 13:39:23,667 - BotManager - INFO - Nutrition Bot started with PID 86198
+2025-05-28 13:39:23,667 - BotManager - INFO - Nutrition Bot restarted successfully
+2025-05-28 13:39:24,368 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:24,368 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:39:24,368 - BotManager - WARNING - Workout Bot is not running
+2025-05-28 13:39:24,368 - BotManager - INFO - Attempting to restart Workout Bot
+2025-05-28 13:39:26,372 - BotManager - INFO - Starting Workout Bot...
+2025-05-28 13:39:26,383 - BotManager - INFO - Workout Bot started with PID 86202
+2025-05-28 13:39:26,384 - BotManager - INFO - Workout Bot restarted successfully
+2025-05-28 13:39:27,058 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:27,057 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:39:28,060 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:39:24] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:39:28,060 - BotManager - INFO - [Workout Bot] [2025-05-28 13:39:27] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:39:29,062 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:24,370 - discord.client - INFO - logging in using static token
+2025-05-28 13:39:29,062 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:27,064 - discord.client - INFO - logging in using static token
+2025-05-28 13:39:30,064 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:24,858 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:39:30,064 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:27,838 - WorkoutBot - INFO - Cogs loaded successfully
+2025-05-28 13:39:30,831 - BotManager - INFO - Received signal 2
+2025-05-28 13:39:47,082 - BotManager - INFO - Starting all bots...
+2025-05-28 13:39:47,083 - BotManager - INFO - Starting Nutrition Bot...
+2025-05-28 13:39:47,086 - BotManager - INFO - Nutrition Bot started with PID 86217
+2025-05-28 13:39:47,087 - BotManager - INFO - Starting Workout Bot...
+2025-05-28 13:39:47,090 - BotManager - INFO - Workout Bot started with PID 86218
+2025-05-28 13:39:47,091 - BotManager - INFO - All bots started successfully
+2025-05-28 13:39:47,924 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:47,924 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:39:47,925 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:47,924 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:39:48,926 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:39:47] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:39:48,927 - BotManager - INFO - [Workout Bot] [2025-05-28 13:39:47] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:39:49,929 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:47,926 - discord.client - INFO - logging in using static token
+2025-05-28 13:39:49,929 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:47,929 - discord.client - INFO - logging in using static token
+2025-05-28 13:39:50,931 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:49,527 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:39:50,932 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:48,546 - WorkoutBot - INFO - Cogs loaded successfully
+2025-05-28 13:39:51,934 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:39:49] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: fe4d5549f710b9006d24e6ebf05a161b).
+2025-05-28 13:39:51,934 - BotManager - INFO - [Workout Bot] [2025-05-28 13:39:48] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 8ff364b6ee411d28a995bbbd2ca55139).
+2025-05-28 13:39:52,935 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:49,850 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fe4d5549f710b9006d24e6ebf05a161b).
+2025-05-28 13:39:52,936 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:48,946 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8ff364b6ee411d28a995bbbd2ca55139).
+2025-05-28 13:39:53,937 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:51,855 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:39:53,938 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:50,950 - WorkoutBot - INFO - Worko#8608 has connected to Discord!
+2025-05-28 13:39:54,939 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:39:51,855 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:39:54,940 - BotManager - INFO - [Workout Bot] 2025-05-28 13:39:50,950 - WorkoutBot - INFO - Bot is in 1 guilds
+2025-05-28 13:42:35,201 - BotManager - INFO - Received signal 2
+2025-05-28 13:42:36,314 - BotManager - WARNING - Nutrition Bot is not running
+2025-05-28 13:42:36,315 - BotManager - INFO - Attempting to restart Nutrition Bot
+2025-05-28 13:42:38,316 - BotManager - INFO - Starting Nutrition Bot...
+2025-05-28 13:42:38,327 - BotManager - INFO - Nutrition Bot started with PID 86262
+2025-05-28 13:42:38,328 - BotManager - INFO - Nutrition Bot restarted successfully
+2025-05-28 13:42:39,064 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:42:39,064 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:42:39,064 - BotManager - WARNING - Workout Bot is not running
+2025-05-28 13:42:39,064 - BotManager - INFO - Attempting to restart Workout Bot
+2025-05-28 13:42:41,068 - BotManager - INFO - Starting Workout Bot...
+2025-05-28 13:42:41,079 - BotManager - INFO - Workout Bot started with PID 86263
+2025-05-28 13:42:41,079 - BotManager - INFO - Workout Bot restarted successfully
+2025-05-28 13:42:41,748 - BotManager - INFO - [Workout Bot] 2025-05-28 13:42:41,747 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:42:42,749 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:42:39] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:42:42,749 - BotManager - INFO - [Workout Bot] [2025-05-28 13:42:41] [INFO    ] discord.client: logging in using static token
+2025-05-28 13:42:43,750 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:42:39,066 - discord.client - INFO - logging in using static token
+2025-05-28 13:42:43,751 - BotManager - INFO - [Workout Bot] 2025-05-28 13:42:41,752 - discord.client - INFO - logging in using static token
+2025-05-28 13:42:44,752 - BotManager - INFO - [Nutrition Bot] 2025-05-28 13:42:39,499 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:42:44,752 - BotManager - INFO - [Workout Bot] 2025-05-28 13:42:42,513 - WorkoutBot - INFO - Cogs loaded successfully
+2025-05-28 13:42:45,754 - BotManager - INFO - [Nutrition Bot] [2025-05-28 13:42:40] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 15b52b73e87963a664c986a8c652f9ac).
+2025-05-28 13:42:45,754 - BotManager - INFO - [Workout Bot] [2025-05-28 13:42:42] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: ddac7a90b031eea48b61cb95cf529c81).
+2025-05-28 13:42:46,147 - BotManager - INFO - Received signal 2
+2025-05-28 13:42:47,070 - BotManager - INFO - Received signal 2
+2025-05-28 17:33:58,977 - BotManager - INFO - Received signal 2

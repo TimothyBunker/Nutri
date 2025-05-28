@@ -404,6 +404,92 @@ class WorkoutCog(commands.Cog, name="Workout"):
         
         # Call log_set
         await self.log_set(ctx, exercise, weight, reps, rpe)
+    
+    @commands.command(name='help')
+    async def workout_help(self, ctx, command: str = None):
+        """
+        Show help for workout commands
+        
+        Examples:
+        !help              # Show all commands
+        !help start_workout # Show help for specific command
+        """
+        if command:
+            # Show help for specific command
+            cmd = self.bot.get_command(command)
+            if cmd and cmd.cog_name == "Workout":
+                embed = discord.Embed(
+                    title=f"Help: {cmd.name}",
+                    description=cmd.help or "No description available",
+                    color=discord.Color.blue()
+                )
+                
+                if cmd.aliases:
+                    embed.add_field(
+                        name="Aliases",
+                        value=", ".join(f"`{alias}`" for alias in cmd.aliases),
+                        inline=False
+                    )
+                
+                usage = f"{ctx.prefix}{cmd.name} {cmd.signature}"
+                embed.add_field(name="Usage", value=f"`{usage}`", inline=False)
+                
+            else:
+                embed = EmbedBuilder.error("Command not found", f"No workout command named '{command}'")
+        else:
+            # Show all workout commands
+            embed = discord.Embed(
+                title="🏋️ Workout Bot Commands",
+                description="Track your workouts and crush your PRs!",
+                color=discord.Color.orange()
+            )
+            
+            # Session management
+            embed.add_field(
+                name="🎯 Workout Sessions",
+                value=(
+                    f"`{ctx.prefix}start_workout <name>` - Begin workout\n"
+                    f"`{ctx.prefix}end_workout [notes]` - Finish workout\n"
+                    f"`{ctx.prefix}status` - View current session\n"
+                ),
+                inline=False
+            )
+            
+            # Exercise logging
+            embed.add_field(
+                name="📝 Exercise Logging",
+                value=(
+                    f"`{ctx.prefix}log <exercise> <weight> <reps> [rpe]`\n"
+                    f"`{ctx.prefix}w <exercise> <weight> <reps>` - Quick log\n"
+                ),
+                inline=False
+            )
+            
+            # Templates and planning
+            embed.add_field(
+                name="📋 Templates & Planning",
+                value=(
+                    f"`{ctx.prefix}create_workout <name>` - Create template\n"
+                    f"`{ctx.prefix}templates` - View all templates\n"
+                    f"`{ctx.prefix}view_workout <name>` - View template details\n"
+                ),
+                inline=False
+            )
+            
+            # Progress tracking
+            embed.add_field(
+                name="📊 Progress & Records",
+                value=(
+                    f"`{ctx.prefix}prs [exercise]` - View personal records\n"
+                    f"`{ctx.prefix}progress [days]` - View workout stats\n"
+                    f"`{ctx.prefix}history [days]` - Recent workout history\n"
+                ),
+                inline=False
+            )
+            
+            embed.set_footer(text=f"Use {ctx.prefix}help <command> for detailed help on a specific command")
+        
+        await ctx.send(embed=embed)
 
 
 async def setup(bot):

@@ -599,6 +599,128 @@ class NutritionCog(commands.Cog, name="Nutrition"):
         
         await ctx.send(embed=embed)
     
+    @commands.command(name='set_goal', aliases=['goal', 'target'])
+    async def set_goal(self, ctx, calories: int, protein: int = None, carbs: int = None, fats: int = None):
+        """
+        Set your daily nutrition goals
+        
+        Examples:
+        !set_goal 2200 150 250 80
+        !set_goal 1800 120  # calories and protein only
+        """
+        # Validate calories
+        valid, error = validate_calories(calories)
+        if not valid:
+            await ctx.send(embed=EmbedBuilder.error("Invalid calories", error))
+            return
+        
+        # Validate macros if provided
+        if protein is not None or carbs is not None or fats is not None:
+            valid, error = validate_macros(protein or 0, carbs or 0, fats or 0)
+            if not valid:
+                await ctx.send(embed=EmbedBuilder.error("Invalid macros", error))
+                return
+        
+        # Update user goals
+        self.db.set_user_goals(ctx.author.id, calories, protein, carbs, fats)
+        
+        # Create confirmation embed
+        embed = EmbedBuilder.success(
+            "🎯 Goals Updated!",
+            f"Your daily nutrition goals have been set:"
+        )
+        
+        embed.add_field(name="Calories", value=f"{calories:,} cal", inline=True)
+        if protein:
+            embed.add_field(name="Protein", value=f"{protein}g", inline=True)
+        if carbs:
+            embed.add_field(name="Carbs", value=f"{carbs}g", inline=True)
+        if fats:
+            embed.add_field(name="Fats", value=f"{fats}g", inline=True)
+        
+        embed.set_footer(text="Use !today to see your progress toward these goals")
+        
+        await ctx.send(embed=embed)
+    
+    @commands.command(name='help')
+    async def nutrition_help(self, ctx, command: str = None):
+        """
+        Show help for nutrition commands
+        
+        Examples:
+        !help          # Show all commands
+        !help log      # Show help for log command
+        """
+        if command:
+            # Show help for specific command
+            cmd = self.bot.get_command(command)
+            if cmd and cmd.cog_name == "Nutrition":
+                embed = discord.Embed(
+                    title=f"Help: {cmd.name}",
+                    description=cmd.help or "No description available",
+                    color=discord.Color.blue()
+                )
+                
+                if cmd.aliases:
+                    embed.add_field(
+                        name="Aliases",
+                        value=", ".join(f"`{alias}`" for alias in cmd.aliases),
+                        inline=False
+                    )
+                
+                usage = f"{ctx.prefix}{cmd.name} {cmd.signature}"
+                embed.add_field(name="Usage", value=f"`{usage}`", inline=False)
+                
+            else:
+                embed = EmbedBuilder.error("Command not found", f"No nutrition command named '{command}'")
+        else:
+            # Show all nutrition commands
+            embed = discord.Embed(
+                title="🍎 Nutrition Bot Commands",
+                description="Track your daily nutrition and reach your goals!",
+                color=discord.Color.green()
+            )
+            
+            # Basic logging
+            embed.add_field(
+                name="📝 Food Logging",
+                value=(
+                    f"`{ctx.prefix}log <food> <calories> [protein] [carbs] [fats]`\n"
+                    f"`{ctx.prefix}today` - View today's summary\n"
+                    f"`{ctx.prefix}edit <id> <field> <value>` - Edit a meal\n"
+                    f"`{ctx.prefix}delete <id>` - Delete a meal\n"
+                    f"`{ctx.prefix}undo` - Delete last meal"
+                ),
+                inline=False
+            )
+            
+            # Goals and progress
+            embed.add_field(
+                name="🎯 Goals & Progress",
+                value=(
+                    f"`{ctx.prefix}set_goal <calories> [protein] [carbs] [fats]`\n"
+                    f"`{ctx.prefix}stats [days]` - Nutrition statistics\n"
+                    f"`{ctx.prefix}chart [days]` - Generate charts"
+                ),
+                inline=False
+            )
+            
+            # Presets and recipes
+            embed.add_field(
+                name="🍽️ Presets & Recipes",
+                value=(
+                    f"`{ctx.prefix}preset <name>` - Use saved preset\n"
+                    f"`{ctx.prefix}presets` - List all presets\n"
+                    f"`{ctx.prefix}browse_recipes [category]` - Available recipes\n"
+                    f"`{ctx.prefix}track_recipe <name>` - Log recipe & deduct ingredients"
+                ),
+                inline=False
+            )
+            
+            embed.set_footer(text=f"Use {ctx.prefix}help <command> for detailed help on a specific command")
+        
+        await ctx.send(embed=embed)
+    
     def _calculate_macro_percentages(self, protein: float, carbs: float, fats: float):
         """Calculate macro percentages from grams"""
         total_calories = (protein * 4) + (carbs * 4) + (fats * 9)

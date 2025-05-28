@@ -4,3 +4,36 @@
 2025-05-28 12:40:41,021 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8d2856b69f273a0947d14e222cf718b3).
 2025-05-28 12:40:43,026 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
 2025-05-28 12:40:43,026 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:19:07,772 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:19:07,797 - discord.client - INFO - logging in using static token
+2025-05-28 13:19:08,370 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:19:08,591 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0c7b8d600b377a3403f3b2c25010687c).
+2025-05-28 13:19:10,596 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:19:10,596 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:24:31,380 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:24:31,383 - discord.client - INFO - logging in using static token
+2025-05-28 13:24:31,741 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:28:51,628 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:28:51,650 - discord.client - INFO - logging in using static token
+2025-05-28 13:28:52,380 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:28:53,085 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2473cff126819f84ab3d66fbe0454f80).
+2025-05-28 13:28:55,090 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:28:55,091 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:39:24,368 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:39:24,370 - discord.client - INFO - logging in using static token
+2025-05-28 13:39:24,858 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:39:25,209 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 38065ea416b218372d02e3a756f3a9a4).
+2025-05-28 13:39:27,214 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:39:27,214 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:39:47,924 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:39:47,926 - discord.client - INFO - logging in using static token
+2025-05-28 13:39:49,527 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:39:49,850 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: fe4d5549f710b9006d24e6ebf05a161b).
+2025-05-28 13:39:51,855 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:39:51,855 - NutritionBot - INFO - Bot is in 1 guilds
+2025-05-28 13:42:39,064 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 13:42:39,066 - discord.client - INFO - logging in using static token
+2025-05-28 13:42:39,499 - NutritionBot - INFO - Cogs loaded successfully
+2025-05-28 13:42:40,434 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 15b52b73e87963a664c986a8c652f9ac).
+2025-05-28 13:42:42,438 - NutritionBot - INFO - Nutri#9406 has connected to Discord!
+2025-05-28 13:42:42,438 - NutritionBot - INFO - Bot is in 1 guilds

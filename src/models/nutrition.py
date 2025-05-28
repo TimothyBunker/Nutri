@@ -240,6 +240,20 @@ class NutritionDatabase(DatabaseManager):
             
             return True
     
+    def set_user_goals(self, user_id: int, calories: int, protein: int = None, 
+                       carbs: int = None, fats: int = None) -> bool:
+        """Set user's daily nutrition goals"""
+        updates = {'daily_calorie_target': calories}
+        
+        if protein is not None:
+            updates['daily_protein_target'] = protein
+        if carbs is not None:
+            updates['daily_carb_target'] = carbs
+        if fats is not None:
+            updates['daily_fat_target'] = fats
+        
+        return self.update_user_stats(user_id, **updates)
+    
     # Weight tracking
     def log_weight(self, user_id: int, weight: float, body_fat: Optional[float] = None,
                    muscle_mass: Optional[float] = None, water_percentage: Optional[float] = None,

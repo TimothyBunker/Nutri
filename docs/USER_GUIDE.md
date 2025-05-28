@@ -5,9 +5,9 @@
 ### First Time Setup
 1. Join the Discord server where the bots are running
 2. Start with basic logging to familiarize yourself with the commands
-3. Set your preferences: `!set_goal`, `!set_units`, `!timezone`
+3. Set your daily goals: `!set_goal 2000 150` (calories and protein)
 4. Load premade recipes: `!load_recipes`
-5. Add some basic food inventory: `!add_food`
+5. Add some basic food inventory: `!add_food 2 cups rice`
 
 ### Bot Prefixes
 - **Nutrition Bot**: `!` (exclamation mark)
@@ -19,20 +19,26 @@
 
 ### Basic Food Logging
 
-#### `!log <calories> [protein] [carbs] [fats] <food_name>`
+#### `!log <food_name> <calories> [protein] [carbs] [fats]`
 Log a meal with nutritional information
 - **Examples:**
-  - `!log 350 25 45 12 Chicken and rice bowl`
-  - `!log 150 Greek yogurt` (calories only)
-  - `!log 520 35 40 20 Grilled salmon with vegetables`
+  - `!log "Chicken and rice bowl" 350 25 45 12`
+  - `!log "Greek yogurt" 150 12 8 0`
+  - `!log "Grilled salmon with vegetables" 520 35 40 20`
 
-#### `!delete_last` / `!dl`
+#### `!undo` / `!u`
 Delete your most recent meal entry
-- **Example:** `!delete_last`
+- **Example:** `!undo`
 
-#### `!edit_last <calories> [protein] [carbs] [fats]`
-Edit the nutrition values of your last logged meal
-- **Example:** `!edit_last 400 30 45 15`
+#### `!edit <meal_id> <field> <value>`
+Edit a specific meal's nutrition values
+- **Examples:**
+  - `!edit 123 calories 400`
+  - `!edit 123 protein 30`
+
+#### `!delete <meal_id>`
+Delete a specific meal entry
+- **Example:** `!delete 123`
 
 ### Meal Management
 
@@ -61,32 +67,22 @@ Set your daily nutrition goals
   - `!set_goal 2200 150 250 80`
   - `!set_goal 1800` (calories only)
 
-#### `!progress` / `!p`
+#### `!today` / `!t` / `!summary`
 View your daily nutrition progress with visual progress bars
-
-#### `!weekly`
-View your nutrition progress for the current week
-
-#### `!streak`
-Check your logging streak and consistency
 
 ### Data & Analytics
 
-#### `!chart [days]`
+#### `!plot` / `!chart` / `!graph [days]`
 Generate a nutrition chart (default: 7 days)
 - **Examples:**
-  - `!chart` (last 7 days)
+  - `!plot` (last 7 days)
   - `!chart 30` (last 30 days)
 
-#### `!stats [days]`
+#### `!stats` / `!s [days]`
 View detailed nutrition statistics
 - **Examples:**
   - `!stats` (last 7 days)
   - `!stats 14` (last 2 weeks)
-
-#### `!export [days]`
-Export your nutrition data to CSV
-- **Example:** `!export 30`
 
 ### Recipe Integration
 
@@ -101,15 +97,13 @@ Browse recipes you can make with current inventory
 Log a recipe and automatically deduct ingredients from inventory
 - **Example:** `!track_recipe Scrambled Eggs with Toast`
 
-### Settings
+### Help
 
-#### `!set_units <metric|imperial>`
-Set your preferred unit system
-- **Example:** `!set_units metric`
-
-#### `!timezone <timezone>`
-Set your timezone for accurate daily tracking
-- **Example:** `!timezone America/New_York`
+#### `!help [command]`
+Show help for nutrition commands
+- **Examples:**
+  - `!help` (show all commands)
+  - `!help log` (show help for log command)
 
 ---
 
@@ -117,88 +111,92 @@ Set your timezone for accurate daily tracking
 
 ### Workout Sessions
 
-#### `!start_workout [name]`
-Begin a new workout session
+#### `!start_workout <name>` / `!start` / `!begin`
+Begin a workout session using a saved template
 - **Examples:**
-  - `!start_workout` (generic session)
   - `!start_workout "Push Day"`
-  - `!start_workout Upper Body`
+  - `!start "Upper Body"`
 
-#### `!end_workout`
+#### `!end_workout [notes]` / `!end` / `!finish`
 End your current workout session
+- **Examples:**
+  - `!end_workout`
+  - `!end "Great session, felt strong"`
 
-#### `!current_workout` / `!cw`
+#### `!status` / `!current`
 View your current workout session details
 
 ### Exercise Logging
 
-#### `!add_exercise <exercise> <weight> <reps> [sets] [rpe]`
-Log an exercise with weight and reps
+#### `!log <exercise> <weight> <reps> [rpe]` / `!log_set` / `!ls`
+Log a set during your workout
 - **Examples:**
-  - `!add_exercise "Bench Press" 225 8 3` (3 sets)
-  - `!add_exercise Squats 315 5 1 9` (1 set, RPE 9)
-  - `!add_exercise "Pull-ups" bodyweight 12 3`
+  - `!log "Bench Press" 225 8`
+  - `!log "Bench Press" 225 8 8.5` (with RPE)
+  - `!log Squats 315 5 9`
 
-#### `!add_cardio <activity> <duration_minutes> [distance] [calories]`
-Log cardio exercise
+#### `!w <exercise> <weight> <reps> [rpe]` / `!quick`
+Quick log shortcut (same as !log but shorter)
 - **Examples:**
-  - `!add_cardio Running 30 3.5` (30 min, 3.5 miles)
-  - `!add_cardio Cycling 45 12 400` (45 min, 12 miles, 400 cal)
-
-#### `!rest [minutes]`
-Start a rest timer
-- **Examples:**
-  - `!rest` (default rest time)
-  - `!rest 3` (3 minutes)
+  - `!w bench 185 8`
+  - `!w bench 185 8 8.5`
 
 ### Workout Templates
 
-#### `!save_template <name>`
-Save your current workout as a template
-- **Example:** `!save_template "Push Day A"`
+#### `!create_workout <name> <type>` / `!create`
+Create a new workout template
+- **Examples:**
+  - `!create_workout "Push Day" push`
+  - `!create "Upper Body" upper`
 
-#### `!load_template <name>`
-Start a workout using a saved template
-- **Example:** `!load_template "Push Day A"`
+#### `!add_exercise <workout_name> <exercise> <sets> <rep_range>` / `!add`
+Add exercises to a workout template
+- **Examples:**
+  - `!add_exercise "Push Day" "bench press" 3 8-10`
+  - `!add "Push Day" "overhead press" 3 6-8`
 
-#### `!templates`
+#### `!templates` / `!workouts`
 View all your saved workout templates
 
-#### `!delete_template <name>`
+#### `!view_workout <name>` / `!view`
+View details of a specific workout template
+- **Example:** `!view_workout "Push Day"`
+
+#### `!delete_workout <name>`
 Delete a workout template
-- **Example:** `!delete_template "Old Routine"`
+- **Example:** `!delete_workout "Old Routine"`
 
 ### Progress Tracking
 
-#### `!pr <exercise>` / `!personal_record`
-View your personal record for an exercise
+#### `!progress <exercise>`
+Show progress chart for a specific exercise
 - **Examples:**
-  - `!pr "Bench Press"`
-  - `!pr Deadlift`
+  - `!progress "bench press"`
+  - `!progress deadlift`
 
-#### `!workout_history [days]`
+#### `!prs [exercise]` / `!records`
+View your personal records
+- **Examples:**
+  - `!prs` (all PRs)
+  - `!prs "bench press"` (specific exercise)
+
+#### `!history [days]` / `!recent`
 View your recent workout history
 - **Examples:**
-  - `!workout_history` (last 7 days)
-  - `!workout_history 30`
+  - `!history` (recent workouts)
+  - `!history 30`
 
-#### `!exercise_history <exercise> [days]`
-View history for a specific exercise
-- **Example:** `!exercise_history "Bench Press" 60`
+#### `!volume <exercise> [days]`
+View volume chart for an exercise
+- **Example:** `!volume "bench press" 60`
 
-### Analytics
+### Help
 
-#### `!workout_stats [days]`
-View detailed workout statistics
-- **Example:** `!workout_stats 30`
-
-#### `!volume_chart <exercise> [days]`
-Generate a volume chart for an exercise
-- **Example:** `!volume_chart "Bench Press" 90`
-
-#### `!strength_chart <exercise> [days]`
-Generate a strength progression chart
-- **Example:** `!strength_chart Squats 180`
+#### `!help [command]`
+Show help for workout commands
+- **Examples:**
+  - `!help` (show all commands)
+  - `!help start_workout` (show help for specific command)
 
 ---
 

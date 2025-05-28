@@ -1,0 +1,2 @@
+#!/bin/bash
+"/Users/timothybunker/PycharmProjects/HealthAndFitness/.venv/bin/python" run_bots.py "$@"
