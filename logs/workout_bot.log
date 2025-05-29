@@ -40,3 +40,9 @@
 2025-05-28 13:42:42,863 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ddac7a90b031eea48b61cb95cf529c81).
 2025-05-28 13:42:44,866 - WorkoutBot - INFO - Worko#8608 has connected to Discord!
 2025-05-28 13:42:44,866 - WorkoutBot - INFO - Bot is in 1 guilds
+2025-05-28 20:57:14,890 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-05-28 20:57:14,904 - discord.client - INFO - logging in using static token
+2025-05-28 20:57:15,283 - WorkoutBot - INFO - Cogs loaded successfully
+2025-05-28 20:57:15,545 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a6debaeff13185eebb86b140fda85df6).
+2025-05-28 20:57:17,547 - WorkoutBot - INFO - Worko#8608 has connected to Discord!
+2025-05-28 20:57:17,547 - WorkoutBot - INFO - Bot is in 1 guilds

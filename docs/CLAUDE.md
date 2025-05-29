@@ -6,8 +6,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a comprehensive Health and Fitness Discord bot system with a clean, modular architecture:
 
-1. **Nutrition Bot** - Tracks meals, calories, macros, and nutritional goals
-2. **Workout Bot** - Logs workouts, tracks progress, manages training programs
+1. **Nutrition Bot** - Tracks meals, calories, macros, nutritional goals, inventory management, and recipe planning
+2. **Workout Bot** - Logs workouts, tracks progress, manages training programs with periodization support
+
+## Technical Requirements
+
+- **Python**: 3.8+ required (uses asyncio, type hints)
+- **Key Dependencies**:
+  - `discord.py>=2.3.0` - Discord bot framework
+  - `matplotlib>=3.7.0` - Chart generation
+  - `numpy>=1.24.0` - Numerical calculations
+  - `python-dotenv>=1.0.0` - Environment configuration
+  - `pytz>=2023.3` - Timezone support
+  - `APScheduler>=3.10.0` - Scheduled tasks
+  - `aiofiles>=23.0.0` - Async file operations
 
 ## Architecture
 
@@ -84,19 +96,36 @@ HealthAndFitness/
 ### Running the Bots
 ```bash
 # First time setup
-python setup.py
+python tools/setup.py
 
-# Run both bots
+# Install dependencies
+pip install -r requirements.txt
+
+# Run both bots (interactive mode with commands)
 python run_bots.py
 
-# Or use shortcuts
-./start         # Unix/Mac
-start.cmd       # Windows
+# Run both bots (background mode)
+python run_bots.py --background
+
+# Or use platform-specific shortcuts
+./start.sh      # Unix/Mac
+start.bat       # Windows
+python launcher.py  # Cross-platform interactive launcher
 
 # Run individual bots
 python nutrition_bot.py
 python workout_bot.py
 ```
+
+### Bot Manager Commands
+When running `python run_bots.py` in interactive mode:
+- `status` - Show bot status
+- `logs [lines]` - View recent logs (default: 20 lines)
+- `restart [bot]` - Restart specific bot or all bots
+- `stop [bot]` - Stop specific bot or all bots
+- `start [bot]` - Start specific bot or all bots
+- `backup` - Create manual database backups
+- `quit` or `exit` - Exit manager
 
 ### Adding New Commands
 
@@ -149,8 +178,22 @@ with db.get_cursor() as c:
 ### Configuration
 - All config in `src/core/config.py` and `.env`
 - Databases stored in `data/` directory
-- Logs stored in `logs/` directory
+- Logs stored in `logs/` directory  
 - Automatic backups in `backups/` directory
+
+### Environment Variables (.env)
+Required:
+- `NUTRITION_BOT_TOKEN` - Discord bot token for nutrition bot
+- `WORKOUT_BOT_TOKEN` - Discord bot token for workout bot
+
+Optional:
+- `BOT_PREFIX` - Command prefix (default: !)
+- `LOG_LEVEL` - Logging level (default: INFO)
+- `DEBUG_MODE` - Enable debug mode (default: false)
+- `DEFAULT_TIMEZONE` - Default timezone (default: UTC)
+- `DEFAULT_UNIT_SYSTEM` - Default units (default: imperial)
+- `ENABLE_AUTO_BACKUP` - Enable automatic backups (default: true)
+- `BACKUP_INTERVAL_HOURS` - Backup interval (default: 24)
 
 ### Error Handling
 - Global error handler in main bot classes
@@ -176,6 +219,14 @@ with db.get_cursor() as c:
 2. Add database schema if needed (update model's `init_db`)
 3. Implement command with proper validation
 4. Test thoroughly with edge cases
+
+### Unit Testing
+Currently no automated tests. When implementing tests:
+1. Create `tests/` directory  
+2. Use `pytest` for test framework
+3. Mock Discord.py components
+4. Test database operations with in-memory SQLite
+5. Run tests: `pytest tests/`
 
 ### Debugging
 - Check `logs/` directory for detailed logs
@@ -255,3 +306,30 @@ The system includes 50+ professionally crafted recipes covering:
 - Unit conversion and compatibility checking
 - Expiration date consideration in recipe suggestions
 - Nutritional goal integration with meal planning
+
+## Important Notes & Common Gotchas
+
+### Database Considerations
+- SQLite databases are in `data/` directory, not project root
+- Automatic backups run every 24 hours (configurable)
+- Database connections use context managers - always use model classes
+- Indexes exist on frequently queried columns (user_id, date, etc.)
+
+### Discord.py Specifics
+- Commands use `@commands.command()` decorator
+- Cogs must be loaded in main bot files
+- Bot requires appropriate Discord permissions (Send Messages, Embed Links, Attach Files)
+- Rate limiting is implemented (30 commands/minute by default)
+
+### Common Issues
+- **"No module named 'src'"**: Ensure running from project root
+- **Bot not responding**: Check prefix in .env (default: !)
+- **Database locked**: Only one process should access each database
+- **Missing dependencies**: Run `pip install -r requirements.txt`
+
+### Code Style Guidelines
+- Use type hints for function parameters and returns
+- Follow existing patterns for validation and error handling
+- Use EmbedBuilder for all Discord responses
+- Keep database operations in model classes only
+- Use logging instead of print statements

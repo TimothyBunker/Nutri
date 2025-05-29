@@ -24,7 +24,7 @@
 2. **Default prefix**: All commands start with `!`
 
 3. **First-time users** should:
-   - Set daily targets: `!target calories 2000` and `!target protein 150`
+   - Set daily targets: `!set_goal calories 2000` and `!set_goal protein 150`
    - Load premade recipes: `!load_recipes`
    - Create your first workout: `!create_workout "Push Day" push`
 
@@ -69,6 +69,8 @@ Edit a previously logged meal.
 **Fields**: calories, protein, carbs, fats
 
 **Example**: `!edit 123 calories 200`
+
+**Note**: Get the meal_id from the `!today` command output
 
 #### `!delete` / `!remove`
 Delete a logged meal.
@@ -539,10 +541,12 @@ Analyze training volume by muscle group.
 ## Quick Reference Card
 
 ### Essential Nutrition Commands
+- `!set_goal calories 2000` - Set daily calorie goal
 - `!log "food" calories protein carbs fats` - Log meal
 - `!today` - View daily summary
 - `!track_recipe "name"` - Track recipe & deduct inventory
 - `!browse_recipes` - See available recipes
+- `!load_recipes` - Load premade recipes (first time)
 
 ### Essential Workout Commands  
 - `!start_workout "name"` - Begin workout

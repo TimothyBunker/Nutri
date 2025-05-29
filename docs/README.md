@@ -64,11 +64,11 @@ python worko.py
 ### Nutrition Commands
 
 ```
-# Initial setup (Imperial)
-!setup 5'10" 180 175 2800 180
-
-# Initial setup (Metric)
-!setup 178cm 82 79 2800 180
+# Set daily goals (do this first!)
+!set_goal calories 2800
+!set_goal protein 180
+!set_goal carbs 350
+!set_goal fats 90
 
 # Log a meal
 !log "chicken breast" 165 31 0 3.6
@@ -80,14 +80,17 @@ python worko.py
 !quick chicken
 !quick chicken 1.5  # 1.5 servings
 
-# Edit a meal
-!edit_meal 123 calories 200
+# Edit a meal (get ID from !today)
+!edit 123 calories 200
 
 # View today's summary
 !today
 
-# Change units
-!units metric
+# Load premade recipes (recommended for new users)
+!load_recipes
+
+# Add food to inventory
+!add_food 2 lbs chicken breast
 ```
 
 ### Workout Commands
